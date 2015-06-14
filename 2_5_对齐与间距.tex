@@ -1,0 +1,49 @@
+\documentclass[12pt]{article}
+%\usepackage{identfirst}    %使第一段首行缩进,没有这个包
+\usepackage{setspace}   %行距包
+\setlength{\parindent}{4em} %设置首行缩进距离
+\addtolength{\parskip}{3pt} %设置段间距
+\linespread {1.3} %一倍半行距
+\linespread {1.6} %双倍行距 全局设置,对所有文本生效
+\begin{document}
+        \section{section 1}
+            %居左,居右,居中对齐环境
+            \begin{flushleft}
+            
+            \singlespacing  %单倍
+             section 1 content \\
+             section 1 content \\
+             
+             \onehalfspacing    %一倍半
+             section 1 content \\
+             section 1 content \\
+             
+             \doublespacing %双倍
+             section 1 content \\
+             section 1 content \\ 
+                         
+            \setstretch{1.25}   %指定行距
+             section 1 content \\
+             section 1 content \\ 
+             
+             %双倍行距环境
+            \begin{doublespacing}
+            double\\spacing
+            \end{doublespacing}
+            %指定行距环境
+            \begin{spacing}{1.25}
+            any\\spacing
+            \end{spacing}
+
+             \end{flushleft}    
+             
+            \begin{flushright}
+             section 1 content \\
+             section 1 content
+             \end{flushright}  
+             
+            \begin{center}
+             section 1 content \\
+             section 1 content
+             \end{center}                 
+\end{document}

@@ -1,0 +1,27 @@
+%hello world
+\documentclass[10pt,a4paper,notitlepage,onecolumn]{article}
+\title{First Latex}
+\author{Lee}
+\date{2015/06/14}
+\begin{document}
+\maketitle  %生成标题
+\setcounter{tocdepth}{4}    %指定目录生成的深度
+\tableofcontents    %生成目录
+    \begin{abstract}
+        Face detection abstract.
+    \end{abstract}
+    \part{part 1}
+            part 1 content
+        \section{section 1}
+             section 1 con tent
+            \subsection{subsection 1}
+                 subsection 1 content
+            \subsection{subsection 2}
+                subsection 2 content
+                \subsubsection*{subsubsection 1}    % * 不显示标题
+                    subsubsection 1 content
+                    \paragraph{paragraph 1}
+                        paragraph 1 content    %斜体
+                        \subparagraph{subparagraph}
+                            subparagraph 1 content
+\end{document}

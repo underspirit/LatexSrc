@@ -1,0 +1,38 @@
+\documentclass[12pt]{article}
+\usepackage{paralist}   %行距小的列表
+\begin{document}
+        \renewcommand{\labelitemi}{*}   %自定义列表符号
+        \renewcommand{\theenumi}{\Roman{enumi}} %自定义列表序号
+        \begin{itemize} %各种列表
+            \item C++
+            \item Java
+            \item Python
+        \end{itemize}
+        \begin{compactitem}
+            \item C++
+            \item Java
+            \item Python
+        \end{compactitem}  
+                
+        \begin{enumerate}
+            \item C++
+            \item Java
+            \item Python
+        \end{enumerate}
+        \begin{compactenum}
+            \item C++
+            \item Java
+            \item Python
+        \end{compactenum}
+                
+        \begin{description}
+            \item[C++] C++
+            \item[Java] Java
+            \item[Python] Python
+        \end{description}
+        \begin{compactdesc}
+            \item[C++] C++
+            \item[Java] Java
+            \item[Python] Python
+        \end{compactdesc}  
+\end{document}

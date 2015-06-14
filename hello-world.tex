@@ -1,0 +1,77 @@
+%hello world
+\documentclass[10pt,a4paper,notitlepage,onecolumn]{article}
+\usepackage{setspace}   %行距命令
+\usepackage{marginnote} %不带浮动边注
+\usepackage{paralist}   %行距小的列表
+\usepackage{verbatim}   %使用大片注释
+\title{First Latex}
+\author{Lee}
+\date{2015/06/14}
+\setlength{\parindent}{4em} %设置首行缩进距离
+\addtolength{\parskip}{3pt} %设置段间距
+\linespread{1}    %行间距
+\begin{document}
+\begin{comment}
+\maketitle  %生成标题
+\end{comment}
+\setcounter{tocdepth}{4}    %指定目录生成的深度
+%\tableofcontents    %生成目录
+    \begin{abstract}
+        Face detection abstract.
+    \end{abstract}
+    \part{part 1}
+        \begin{spacing}{1.2}    %指定大小行距
+            \begin{quotation}
+            part 1 content \\ sdf
+            \end{quotation}
+        \end{spacing}
+        \section{section 1}
+        \renewcommand{\labelitemi}{*}   %自定义列表符号
+        \renewcommand{\theenumi}{\Roman{enumi}}
+        \begin{itemize} %各种列表
+            \item C++
+            \item Java
+            \item Python
+        \end{itemize}
+        \begin{enumerate}
+            \item C++
+            \item Java
+            \item Python
+        \end{enumerate}
+        \begin{description}
+            \item[C++] C++
+            \item[Java] Java
+            \item[Python] Python
+        \end{description}
+        \begin{compactitem}
+            \item C++
+            \item Java
+            \item Python
+        \end{compactitem}
+        section 1 \\ content \\ %换行指令 \\
+        %原文打印
+        \begin{verbatim}  System.out{"Hello,world!");
+         \end{verbatim}
+         \renewcommand{\thefootnote}{\Roman{footnote}} %i, ii, iii,自定义脚注标号
+         xitele\footnote{asdfsdfdsfdsfdsf}  %脚注
+        \# \footnote{xixi}
+        \$ \reversemarginpar\marginnote{caca} %先反向,再加边注
+         \^ \& \_\_ \{ \} \~ \textbackslash \% - \today -- \TeX --- \LaTeX \\
+        \textcircled{A} %各种符号
+            \subsection{subsection 1}
+            \tiny   %字号大小
+            \textrm{subsection 1 content}
+            \subsection{subsection 2}
+            \huge
+            \textbf{subsection 2 content}   %设置加粗
+            subsection 2 \newline
+            \underline{con} %下划线
+            tentsubsection 2 contentsubsection 2 contentsubsection 2 contentsubsection 2 contentsubsection 2 content
+                \subsubsection*{subsubsection 1}    % * 不显示标题
+                \textsf{subsubsection 1 content}
+                    \paragraph{paragraph 1}
+                    \textit{paragraph 1 content}    %斜体
+                    \\
+                        \subparagraph{subparagraph}
+                        \textsc{subparagraph 1 content}
+\end{document}

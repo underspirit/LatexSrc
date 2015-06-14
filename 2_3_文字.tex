@@ -1,0 +1,34 @@
+\documentclass[10pt,a4paper,notitlepage,onecolumn]{article}
+\usepackage[normalem]{ulem} %\underline 命令可以给字体加下划线，但是它不能正确断字。 ulem 宏包改进了断字，还增加了波浪线和删除线等命令。只是 ulem 把 \emph 重定义成了下划线，我们可以在引用宏包时可以加个选项改回去： \usepackage[normalem]{ulem}。
+\begin{document}
+        \section{section 1}
+             section 1 content 
+             \\ %换行
+             \newline   %换行
+             %\newpage   %换页
+             %各种符号
+             \^ \& \_\_ \{ \} \~ \textbackslash \% 
+             -  %短划线
+              \today 
+              --    %中划线
+               \TeX 
+               ---  %长划线
+                \LaTeX \\
+            \textcircled{A} 
+            %字体样式
+            \\
+            \tiny   %字体大小
+            \textrm{subsection 1 content}\\ %roman
+            \small
+            \textbf{subsection 2 content}\\   %设置加粗
+            \Large
+            \textit{paragraph 1 content}\\    %斜体
+            \textsf{subsubsection 1 content}\\    %sans serif
+            %字体强调和下划线
+            \emph{emphasis}\\
+            \uline{underline}\\
+            \underline{underline}\\ %自带
+            \uwave{waveline}\\
+            \sout{strike -out}\\
+            \hyphenation{BASIC blar-blar-blar}
+\end{document}

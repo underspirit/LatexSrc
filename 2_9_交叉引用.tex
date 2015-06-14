@@ -1,0 +1,8 @@
+\documentclass[12pt]{article}
+\begin{document}
+    \section{section 1}
+        %在 L ATEX 中我们可以任意设置标签，然后引用标签前面最近一个对象 (章、节、图、表等) 的编号或者页码，这就是交叉引用 (cross reference) 。例 2.19 中的 marker 是一个标签名，它在全文中须保持唯一。文档中新增标签后后，第一次编译时会得到类似下面的警告信息。因为第一次编译只会扫描出有标签的地方，第二次编译才能得到正确结果。
+        a tag \label{marker}
+        xixixi \\
+        pageNum: \pageref{marker} \ref{marker}section
+\end{document}

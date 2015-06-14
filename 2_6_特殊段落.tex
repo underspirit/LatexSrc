@@ -1,0 +1,44 @@
+\documentclass[12pt]{article}
+\usepackage{marginnote} %不带浮动边注
+\usepackage{verbatim}
+\begin{document}
+        \section{section 1}
+            %摘录
+             \begin{quote}  %引文两端\\都缩进
+                part 1 content \\ sdf
+             \end{quote}           
+             \begin{quotation}
+                part 1 content \\ sdf   %引文两端缩进，首行增加缩进
+             \end{quotation}   
+             \begin{verse}
+                part 1 content \\ sdf   %引文两端缩进，第二行起增加缩进。
+             \end{verse}   
+            
+            %原文打印 文档中的命令和源代码通常使用等宽字体，也就是原文打印
+            %使用listing和fancyvrb宏包可以有行号,高亮等..
+             \verb|command| %行间命令
+              %环境
+             \begin{verbatim}  
+                 printf("Hello , world!");
+             \end{verbatim}
+             %带*号,打出空格
+             \begin{verbatim*}
+                printf("Hello , world!");
+             \end{verbatim*}
+             
+             %脚注,边注 
+             %\marginpar 命令使用浮动体 (ìoat) 7 来生成边注，所以不能在其他浮动体或脚注内嵌套。 marginnote 宏包的 \marginnote 命令不使用浮动体，因而没有这个缺陷。
+            \renewcommand{\thefootnote}{\Roman{footnote}} %i, ii, iii,自定义脚注标号
+             xitele\footnote{asdfsdfdsfdsfdsf}  %脚注
+            \# \footnote{xixi}
+            \$ \reversemarginpar \marginnote{caca} %先反向,再加边注
+            \\
+            \normalmarginpar
+            ga \marginpar{shabi}
+            
+            %注释 使用 verbatim 宏包的 comment 环境
+            \begin{comment}
+            水电费第三方
+            水电费
+            \end{comment}
+\end{document} 
