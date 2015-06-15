@@ -1,0 +1,35 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}    %使用数学功能
+\usepackage{amsthm} %使用proof环境
+\usepackage[CJKchecksingle,CJKnumber]{xeCJK}
+\setCJKmainfont[BoldFont={Adobe Heiti Std},ItalicFont={Adobe Kaiti Std}]{Adobe Song Std}
+\setCJKsansfont{Adobe Heiti Std}
+\setCJKmonofont{Adobe Fangsong Std}
+\punctstyle{hangmobanjiao}
+\begin{document}
+    \section{section 1}
+    \subsection{sub 1}
+    %\newtheorem 命令可以用来定义定理之类的环境，其语法如下。语法：{环境名}[编号延续]{显示名}[编号层次]
+    %下面的代码定制了四个环境：定义、定理、引理和推论，它们都在一个section 内统一编号，而引理和推论会延续定理的编号。
+    \newtheorem{definition}{定义}[section]
+    \newtheorem{theorem}{定理}[section]
+    \newtheorem{lemma}[theorem]{引理}
+    \newtheorem{corollary}[theorem]{推论}
+    \begin{definition}
+        Java 是一种跨平台的编程语言。
+    \end{definition}
+    \begin{theorem}
+        咖啡因可以刺激人的中枢神经。
+    \end{theorem}
+    \begin{lemma}
+        茶和咖啡都会使人的大脑兴奋。
+    \end{lemma}
+    \begin{corollary}
+        晚上喝咖啡可能会导致失眠。
+    \end{corollary}
+    
+    %amsthm 宏包提供的 proof 环境（见 例 4.21）可以用来输入证明，它会在证明结尾加一个 QED 符号
+    \begin{proof}[命题物质无限可分的证明]
+        一尺之棰，日取其半，万世不竭。
+    \end{proof}
+\end{document}

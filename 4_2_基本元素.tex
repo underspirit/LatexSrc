@@ -1,0 +1,69 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}    %使用数学功能
+
+\begin{document}
+    \section{section 1}
+    %希腊字母
+    $\alpha$ \ $\beta$ \ $\gamma$ \\    %小写
+    $\Delta$ \ $\Theta$ \ $\Gamma$ \\   %大写
+    
+    %上下标和根号
+    %指数或上标用 ^ 表示，下标用 _ 表示，根号用 \sqrt 表示。上下标如果多于一个字母或符号，需要用一对 {} 括起来。
+    \[ x_{ij}^k \ \sqrt{x^{tk}} \ \sqrt[3]{x} \]
+    
+    %分数
+    %分数用 \frac 命令表示，它会根据环境自动调整字号，比如在行间公式中小一点，在独立公式中则大一点。我们可以人工设置分数字号，比如\dfrac 命令把分数的字号设置为独立公式中的大小，而 \tfrac 命令则把字号设为行间公式中的大小。
+    $ \frac{x^2}{y^2} \dfrac{x^2}{y^2} $
+    \[ \frac{x^2}{y^2}
+        \tfrac{x^2}{y^2} \]
+        
+    %运算符
+    %基本符号
+    \[ \pm \ \times \ \div \ \cdot \ \cap \ \cup \
+        \geq \ \leq \ \neq \ \approx \ \equiv \]
+    %高级一点
+    %上下标方式,在行间公式中被压缩了
+    $ \sum_{i=1}^n i \        \prod_{i=1}^n i \  \lim_{x\to0}x^2 \ \int_a^b x^2 dx  $ \\
+    %limits功能,指定不压缩上小标
+    $ \sum\limits_{i=1}^n i \ \prod\limits_{i=1}^n i \ \lim\limits_{x\to0}x^2 \ \int\limits_a^b x^2 dx $
+    %上小标在独立公式中不被压缩
+    \[ \sum_{i=1}^n i \        \prod_{i=1}^n i \  \lim_{x\to0}x^2 \ \int_a^b x^2 dx  \]
+    %\nolimits指定在独立公式中压缩上下标
+     \[\sum\nolimits_{i=1}^n i \ \prod\nolimits_{i=1}^n i \ \lim\nolimits_{x\to0}x^2 \ \int\nolimits_a^b x^2 dx \]
+    %改变积分变量样式
+    \newcommand{\myd}{\;\mathrm{d}}
+    \[ \int x dx \ \int x \myd x \]
+    %多重积分
+    \[ \int\int \ \int\int\int \ \int\int\int\int \ \int\dots\int \]    %错误方法
+    \[ \iint \ \iiint \ \iiiint \ \idotsint \]  %正确方法
+    
+    %箭头
+    \[ \leftarrow \ \longleftarrow \ \rightarrow \ \longrightarrow \ \leftrightarrow \ \longleftrightarrow \]
+    \[ \Leftarrow \ \Longleftarrow \ \Rightarrow \ \Longrightarrow \ \Leftrightarrow \ \Longleftrightarrow \]
+    %可扩展箭头,箭头可以根据内容自动调整长度
+    \[ \xleftarrow{x+y+z} \ \xrightarrow[x<y]{a*b*c} \]
+    
+    %注音和标注
+    \[ \bar{x} \ \hat{x} \ \vec{x} \ \dot{x} \]
+    \[ \overline{xyz} \ \underline{xyz} \ \overleftrightarrow{xyz} \ \overbrace{xyz} \]
+    
+    %分隔符,括号
+    \[ \Bigg(\bigg(\Big(\big((x)\big)\Big)\bigg)\Bigg)\quad
+    \Bigg[\bigg[\Big[\big[[x]\big]\Big]\bigg]\Bigg]\quad
+    \Bigg\{\bigg\{\Big\{\big\{\{x\}\big\}\Big\}\bigg\}\Bigg\}
+    \]
+    \[\Bigg\langle\bigg\langle\Big\langle\big\langle\langle x
+    \rangle\big\rangle\Big\rangle\bigg\rangle\Bigg\rangle\quad
+    \Bigg\lvert\bigg\lvert\Big\lvert\big\lvert\lvert x
+    \rvert\big\rvert\Big\rvert\bigg\rvert\Bigg\rvert\quad
+    \Bigg\lVert\bigg\lVert\Big\lVert\big\lVert\lVert x
+    \rVert\big\rVert\Big\rVert\bigg\rVert\Bigg\rVert 
+    \]
+    
+    %省略号,\dots 和 \cdots的纵向位置不同；前者一般用于有下标的序列。
+    \[ x_1,x_2,\dots,x_n \ 1,2\cdots,n \ \vdots \ \ddots \]
+    %
+    %空白间距
+     a\,b \\ a\:b \\ a\;b \\ a\quad b \\ a\qquad b \\ a\!b 
+    
+\end{document}

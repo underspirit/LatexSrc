@@ -1,0 +1,23 @@
+\documentclass[12pt]{article}
+\usepackage{fontspec}   %英文字体设置
+%分别设置衬线,无衬线,等宽字体
+%中划线和短划线可以用 -- 和 --- 来输入。TEX 中几个短划线是相连的， X T E EX 中缺省它们之间是有空隙的。 例 3.1 用Mapping 参数指示改回 TEX 的方式，即去掉短划线之间的空隙。
+\setmainfont[Mapping=tex-text]{Times New Roman}     
+\setsansfont[Mapping=tex-text]{Tahoma}
+\setmonofont{Courier New}
+
+%中文字体设置
+%CJKchecksingle 参数防止段落最后一行只有一个汉字,CJKnumber 命令可以把阿拉伯数字转换为中文数字,
+\usepackage[CJKchecksingle,CJKnumber]{xeCJK}
+\setCJKmainfont[BoldFont={Adobe Heiti Std},ItalicFont={Adobe Kaiti Std}]{Adobe Song Std}
+\setCJKsansfont{Adobe Heiti Std}
+\setCJKmonofont{Adobe Fangsong Std}
+\punctstyle{hangmobanjiao}
+ 
+\begin{document}
+    \section{section 1}
+        %测试划线
+        sdf--ff \\
+        %各种字体,粗体,斜体...
+        李松如 \ \textbf{李松如} \ \textit{李松如} \ \textsf{李松如}
+\end{document}

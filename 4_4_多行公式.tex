@@ -1,0 +1,35 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}    %使用数学功能
+\begin{document}
+    \section{section 1}
+    %长公式
+    %无对齐,multline
+    \begin{multline}
+        x = a+b+c+{} \\
+        d+e+f+g
+    \end{multline}
+    %有对齐,split它本身不能独立使用，必须包含在其它数学环境内，因此也称作次环境。它用 \\ 和 & 来分行和设置对齐的位置。
+    \[ \begin{split}
+        x ={} &a+b+c+{} \\
+              &d+e+f+g
+    \end{split} \]
+    
+    %公式组
+    %无对齐,gather
+    \begin{gather}
+        a = b+c+d \\
+        x = y+z
+    \end{gather}
+    %对齐,multline, gather, align 等环境都有带 * 的版本，不生成公式编号。
+    \begin{align*}
+        a &= b+c+d \\
+        x &= y+z
+    \end{align*}
+    
+    %分支公式,cases
+    \[ y=\begin{cases}
+        -x,\quad x<0 \\
+        0,\quad x=0 \\
+        x,\quad x>0
+    \end{cases} \]
+\end{document}
