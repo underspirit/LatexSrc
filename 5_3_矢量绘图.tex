@@ -1,0 +1,39 @@
+\documentclass[12pt]{article}
+\usepackage[svgnames]{xcolor}    %颜色宏包,整合了 12 种色彩模式(rgb, cmy, cmyk, hsb, Hsb, tHsb, gray, RGB, HTML, HSB, Gray, wave) ，提供了丰富的预定义颜色和命令。
+
+%xcolor 宏包中预定义的颜色有： 19 种基本颜色， 68 种 dvips 颜色， 151种 SVG 颜色， 317 种 Unix/X11 颜色。如要使用后三类颜色，引用宏包时需加相应预定义颜色集合选项：
+%\usepackage[dvipsnames]{xcolor}
+%\usepackage[svgnames]{xcolor}
+%\usepackage[x11names]{xcolor}
+
+%自定义颜色  语法: \definecolor{名称}{模式}{参数}
+\definecolor{myred}{RGB}{255,0,0}
+\definecolor{mygreen}{HTML}{00FF00}
+\definecolor{myblue}{rgb}{0,0,1}
+
+\usepackage[CJKchecksingle,CJKnumber]{xeCJK}
+\setCJKmainfont[BoldFont={Adobe Heiti Std},ItalicFont={Adobe Kaiti Std}]{Adobe Song Std}
+\setCJKsansfont{Adobe Heiti Std}
+\setCJKmonofont{Adobe Fangsong Std}
+\punctstyle{hangmobanjiao}
+
+\begin{document}
+    \section{section 1}
+    %彩色文字(textcolor)  语法: \textcolor{名称}|[模式]{代码}{文字}
+    \textcolor{Red}{红}
+    \textcolor{Green}{绿}
+    \textcolor{Blue}{蓝}
+    \textcolor[RGB]{255,0,0}{红}
+    \textcolor[HTML]{00FF00}{绿}
+    \textcolor[rgb]{0,0,1}{蓝}
+    
+    %彩色盒子
+    \colorbox{Lavender}{}
+    \colorbox{SkyBlue}{}
+    \colorbox{Wheat}{}
+    %加边框的彩色盒子
+    \fcolorbox{Silver}{Lavender}{}
+    \fcolorbox{RoyalBlue}{SkyBlue}{}
+    \fcolorbox{SandyBrown}{Wheat}{}
+
+\end{document}

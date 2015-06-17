@@ -1,0 +1,83 @@
+\documentclass[12pt]{article}
+\usepackage[CJKchecksingle,CJKnumber]{xeCJK}
+\setCJKmainfont[BoldFont={Adobe Heiti Std},ItalicFont={Adobe Kaiti Std}]{Adobe Song Std}
+\setCJKsansfont{Adobe Heiti Std}
+\setCJKmonofont{Adobe Fangsong Std}
+\punctstyle{hangmobanjiao}
+
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{warpcol}
+\begin{document}
+    \section{section 1}
+        %跨列
+        %可以使用 \multicolumn 命令，同时使用 booktabs 宏包的 \cmidrule 命令来画横跨几列的横线。它们的语法如下：
+        %语法：\multicolumn{横跨列数}{对齐方式}{内容}     语法：\cmidrule{起始列-结束列}
+        \begin{table}[htbp]
+            \centering
+            \caption{跨列}
+            \begin{tabular}{lll}
+                \toprule
+                \ & %第一列,空格
+                \multicolumn{2}{c}{常用工具} \\ %跨两列,居中,要换行,否则不对
+                \cmidrule{2-3}  %画2-3列的横线
+                操作系统 & 发行版 & 编辑器 \\
+                \midrule
+                Windows & MikTeX & TexMakerX \\
+                Unix/Linux & teTeX & Kile \\
+                Mac OS & MacTeX & TeXShop \\
+                通用 & TeX Live & TeXworks \\
+                \bottomrule
+            \end{tabular}
+        \end{table}
+
+        %跨行
+        %跨行表格可以使用 multirow 宏包的 \multirow 命令，其语法如下，
+        %语法：\multirow{竖跨行数}{宽度}{内容}
+        \begin{table}[htbp]
+            \centering
+            \begin{tabular}{lll}
+                \toprule
+                操作系统 & 发行版 & 编辑器 \\
+                \midrule
+                \multirow{2}{*}{Window}  %后面不用换行,否则不对
+                & MikTeX & TexMakerX \\   %还是要加入空白的列
+                & teTeX & Kile \\
+                Mac OS & MacTeX & TeXShop \\
+                通用 & TeX Live & TeXworks \\
+                \bottomrule
+            \end{tabular}
+        \end{table} 
+        
+        \begin{table}[htbp]
+            \centering
+            \begin{tabular}{lllc}
+                \toprule
+                操作系统 & 发行版 & 编辑器 & 用户体验\\
+                \midrule
+                Windows & MikTeX & TeXnicCenter &
+                \multirow {3}{*}{\centering 爽} \\
+                Unix/Linux & TeX Live & Emacs \\
+                Mac OS & MacTeX & TeXShop \\
+                \bottomrule
+            \end{tabular}
+        \end{table}
+       %数字表格
+       %当表格中包含大量数字时，手工调整小数点和数位的对齐很麻烦，这时可以使用 Rochester 2 的 warpcol 宏包 [4]。它为 tabular 环境提供了一个列对齐参数 P，其语法如下，其中 m 和 n 分别是小数点前后的位数，数字前的负号可选。
+       %语法：P{-m.n}    
+        \begin{table}[htbp]
+            \centering
+            \begin{tabular}{P{2.5}P{-2.5}}  %符号表示最前面留出一个放负号的位置
+                \toprule
+                %这里必须要使用multicolumn,否则不显示表头,使用 multicolumn 命令是为了保护表头，防止它们被 P 参数误伤。把跨列命令的列数设为 1 是设置单元格格式的一种常用方法。
+                \multicolumn{1}{c}{数学常数} &  
+                \multicolumn{1}{c}{物理常数} \\
+                \midrule
+                8 3.14159 & 2.99792 \\
+                27.18281 & -17.58819 \\
+                \bottomrule
+            \end{tabular}
+        \end{table}
+\end{document}

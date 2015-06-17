@@ -1,0 +1,90 @@
+\documentclass[12pt]{article}
+\usepackage[CJKchecksingle,CJKnumber]{xeCJK}
+\setCJKmainfont[BoldFont={Adobe Heiti Std},ItalicFont={Adobe Kaiti Std}]{Adobe Song Std}
+\setCJKsansfont{Adobe Heiti Std}
+\setCJKmonofont{Adobe Fangsong Std}
+\punctstyle{hangmobanjiao}
+
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\begin{document}
+    \section{section 1}
+        %鉴定表格
+        %用 \hline 命令表示横线， |表示竖线；用 & 来分列，用 \\ 来换行；每列可以采用居中、居左、居右等横向对齐方式，分别用 l、 c、 r 来表示。
+        \begin{tabular}{|l|c|r|}    %指明列数和每列的对齐方式,以及竖线 语法：[纵向对齐]{横向对齐和分隔符}
+            \hline
+            操作系统 & 发行版 & 编辑器 \\
+            \hline
+            Windows & MikTeX & TexMakerX \\
+            \hline
+            Unix/Linux & teTeX & Kile \\
+            \hline
+            Mac OS & MacTeX & TeXShop \\
+            \hline
+             通用 & TeX Live & TeXworks \\
+            \hline
+    \end{tabular}
+
+    %table,使用浮动表格环境(使用与figure环境类似),并且使用三线表宏包booktabs
+    \begin{table}[htbp]
+        \centering
+        \begin{tabular}{lll}
+            \toprule
+            操作系统 & 发行版 & 编辑器 \\
+            \midrule
+            Windows & MikTeX & TexMakerX \\
+            Unix/Linux & teTeX & Kile \\
+            Mac OS & MacTeX & TeXShop \\
+            通用 & TeX Live & TeXworks \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+    
+    %宽度控制,控制某列的宽度，可以将其对齐方式参数从 l、 c、 r 改为p{宽度}。这时纵向对齐方式是居顶， t、 c、 b 等参数失效。
+    \begin{table}[htbp]
+        \centering
+        \begin{tabular}{p{80pt}p{80pt}p{70pt}}
+            \toprule
+            操作系统 & 发行版 & 编辑器 \\
+            \midrule
+            Windows & MikTeX & TexMakerX \\
+            Unix/Linux & teTeX & Kile \\
+            Mac OS & MacTeX & TeXShop \\
+            通用 & TeX Live & TeXworks \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+    
+    %使用宽度控制参数之后，表格内容缺省居左对齐。我们可以用列前置命令 >{} 配合 \centering、 \raggedleft 命令来把横向对齐方式改成居中或居右。列前置命令仅对紧邻其后的一列有效，其语法如下：语法：>{命令}列参数
+    \begin{table}[htbp]
+        \centering
+        \begin{tabular}{p{80pt}>{\centering}p{80pt}>{\raggedleft\arraybackslash}p{80pt}} %使用array宏包
+            \toprule
+            操作系统 & 发行版 & 编辑器 \\
+            \midrule
+            Windows & MikTeX & TexMakerX \\
+            Unix/Linux & teTeX & Kile \\
+            Mac OS & MacTeX & TeXShop \\
+            通用 & TeX Live & TeXworks \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+    
+    %如果想把纵向对齐方式改为居中和居底，可以使用 Mittelbach和 Carlisle的 array 宏包[3]，它提供了另两个对齐方式参数： m{宽度}、 b{宽度}。 
+    
+    %控制整个表格的宽度
+    %使用 Carlisle的 tabularx 宏包 [2] 的同名环境，其语法如下，其中 X 参数表示某列可以折行。语法：{表格宽度}{横向对齐、分隔符、折行}
+    \begin{table}[htbp]
+        \centering
+        \begin{tabularx}{350pt}{l||X|l||X}
+            \toprule
+            李白 & 平林漠漠烟如织，寒山一带伤心碧。暝色入高楼，有人楼上愁。
+            玉阶空伫立，宿鸟归飞急。何处是归程，长亭更短亭。 &
+            泰戈尔 & 夏天的飞鸟，飞到我的窗前唱歌，又飞去了。
+            秋天的黄叶，它们没有什么可唱，只叹息一声，飞落在那里。 \\
+            \bottomrule
+        \end{tabularx}
+    \end{table}
+    
+\end{document}
