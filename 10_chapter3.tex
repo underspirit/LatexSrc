@@ -1,0 +1,33 @@
+
+    \begin{figure}[htbp]
+        \centering
+        \fbox{%
+        \begin{minipage}{149pt}  %括号中指定宽度...使用fbox显示一个边框..
+            \centering
+            \includegraphics{obama.jpg}
+            \caption{sb1}
+        \end{minipage}%
+        }
+        \hspace{20pt}%
+        \begin{minipage}{149pt}
+            \centering
+            \includegraphics{obama.jpg}
+            \caption{sb2}
+        \end{minipage}
+    \end{figure}
+
+    %并排摆放，共享标题，各有子标题,使用subfig宏包的subfloat
+    \begin{figure}[htbp]
+        \centering
+        \subfloat[xxoo]{
+            \label{fig:subfig_a}
+            \includegraphics{obama.jpg}
+        }
+        \hspace{10pt}%
+        \subfloat[ooxxxxxxxxxxxxxxxxxx]{
+            \label{fig:subfig_b}
+            \includegraphics{obama.jpg}
+        }
+        \caption{sb xxoo}
+        \label{fig:subfig}
+    \end{figure}

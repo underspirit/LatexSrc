@@ -1,0 +1,82 @@
+\documentclass[12pt]{article}
+\usepackage[CJKchecksingle,CJKnumber]{xeCJK}
+\setCJKmainfont[BoldFont={Adobe Heiti Std},ItalicFont={Adobe Kaiti Std}]{Adobe Song Std}
+\setCJKsansfont{Adobe Heiti Std}
+\setCJKmonofont{Adobe Fangsong Std}
+\punctstyle{hangmobanjiao}
+\renewcommand\refname{参考文献} %参考文献标题
+%如果文档类是book之类的, 用\renewcommand\bibname{参考文献}
+\usepackage{amsmath}    %使用数学功能
+\usepackage{natbib}
+\begin{document}
+    %定义了参考文献之后，们我可以用 \cite 命令在正文中引用条目。
+    哈利波特$^{\cite{Rowling_1997}}$
+
+    %thebibliography,  LATEX 中最原始的方法是用 thebibliography 环境和 \bibtem 命令来定义参考文献条目。
+%    \begin{thebibliography}{99}
+%        \bibitem{Rowling_1997}
+%        Joanne K. Rowling ,
+%        \emph{Harry Potter and the Philosopher 's Stone}.
+%        Bloomsbury , London ,
+%        1997.
+%
+%        \bibitem[sb]{Rowl2ing_1997} %指定引用标记
+%        Joanne K. Rowling ,
+%        \emph{Harry Potter and the Philosopher 's Stone}.
+%        Bloomsbury , London ,
+%        1997.
+%
+%        \bibitem{Rowld2ing_1997}
+%        Joanne K. Rowling ,
+%        \emph{Harry Potter and the Philosopher 's Stone}.
+%        Bloomsbury , London ,
+%        1997.
+%    \end{thebibliography}
+
+    Bibtex \\
+
+    盛世嫡妃\cite{Rowling_1997}
+
+    %BibTex,thebibliography 环境的一个缺点是，用户得自己调整显示格式，这样做很麻烦而且易出错。用数据库文件 .bib 记录参考文献条目，用样式文件 .bst 设置显示格式。普通用户一般不需要改动样式文件，只须维护数据库。
+    %BibTEX 将参考文献分为十几种类型，每种类型的参考文献有不同的必选项和可选项
+
+    %一个Bibtex数据实例
+    %其中每行是一个数据项，第一个数据项是关键字，供引用时用；其他数据项都以名称 = 值的形式成对出现，值要写在双引号之内；数据项之间用逗号分隔。
+%    @book{Rowling_1997,
+%        author = "Joanne K. Rowling",
+%        title = "Harry Potter and the Sorcerer 's Stone",
+%        publisher = "Bloomsbury , London",
+%        year = "1997"
+%    }
+
+    %有了数据后，我们需要选一个样式。通常的 L ATEX 发行版都会带有四种标准的样式
+%    plain 参考文献列表按 作者姓氏 排序，序号为阿拉伯数字。
+%    unsrt 参考文献列表按正文中 引用顺序 排序，序号为阿拉伯数字。
+%    alpha 参考文献列表按 作者姓氏 排序，序号为作者姓氏加年份。
+%    abbrv 类似 plain 样式，作者名字、月份、期刊名等用缩写。
+    %选定样式后，我们需要在文档中用 \bibliographystyle 命令来设置样式，然后用 \bibliography 命令输出参考文献列表。
+    \bibliographystyle{plain}
+    \bibliography{myref}
+    %natbib
+    % LATEX 提供的 \cite 命令只支持数字模式,natbib 宏包[6] 则同时支持这两种模式。
+    %natbib 提供了三种列表样式： plainnat, abbrvnat, unsrtnat，它们的参考文献列表和相对应的 L ATEX 标准样式 plain, abbrv, unsrt 效果相同，只是在引用时可以自由选择作者 -年份或数字模式。
+
+    %设置这些没有,具体用法http://blog.sina.com.cn/s/blog_5e16f1770100lqh2.html  https://zhaoshiliang.wordpress.com/2010/07/27/%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AEnatbib%E7%9A%84%E4%BD%BF%E7%94%A8/
+    
+    \setcitestyle{authoryear}
+    see \cite{Rowling_1997}\\
+    see \citet{Rowling_1997}\\
+    see \citep{Rowling_1997}
+
+    \setcitestyle{numbers}
+    see \cite{Rowling_1997}\\
+    see \citet{Rowling_1997}\\
+    see \citep{Rowling_1997}
+
+    \setcitestyle{super}
+    see \cite{Rowling_1997}\\
+    see \citet{Rowling_1997}\\
+    see \citep{Rowling_1997}
+
+
+\end{document}

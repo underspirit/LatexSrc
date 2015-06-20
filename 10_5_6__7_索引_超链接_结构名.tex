@@ -1,0 +1,34 @@
+\documentclass[12pt]{article}
+\usepackage[CJKchecksingle,CJKnumber]{xeCJK}
+\setCJKmainfont[BoldFont={Adobe Heiti Std},ItalicFont={Adobe Kaiti Std}]{Adobe Song Std}
+\setCJKsansfont{Adobe Heiti Std}
+\setCJKmonofont{Adobe Fangsong Std}
+\punctstyle{hangmobanjiao}
+
+\usepackage{hyperref}
+
+\usepackage{makeidx}
+\makeindex  %必须放在这
+\begin{document}
+    \section{333}
+    \subsection{123}
+    %超链接,hyperref宏包
+    %\hyperref 命令对已经定义的标签进行简单包装，加上文字描述。
+    \label{sec:hyperlink}
+    编号形式的链接：\ref{sec:hyperlink}\\
+    文字形式的链接：\hyperref[sec:hyperlink]{链接}\\
+    \url{http://www.dralpha.com/}\\
+    \href{http://www.dralpha.com/}{包老师的主页}\\
+    %索引,干什么还不知道
+    %    当编译含索引的文档时，用户需要执行三次编译操作，
+    %1. 第一遍 xelatex 把索引条目写到一个 .idx 文件中去。
+    %2. makeindex 把 .idx 排序后写到一个 .ind 文件中去。
+    %3. 第二遍 xelatex 在 \printindex 命令的地方引用 .ind 的内容，生成
+    %正确的文档。
+    \index{aaaaaa}
+    水电费
+    \printindex
+    \index{ggg}
+    水电费
+    \printindex
+\end{document}

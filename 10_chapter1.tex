@@ -1,0 +1,33 @@
+%彩色表格
+%使用 Carlisle 的 colortbl 宏包[7]。它提供的 \columncolor、 \rowcolor、 \cellcolor 命令可以分别设置列、行、单元格的颜色。这三个命令的基本语法相似：
+%语法：{颜色}
+%\columncolor 需要放到列前置命令里， rowcolor、 \cellcolor 分别放到行、单元格之前。 colortbl 宏包可以使用 xcolor 宏包的色彩模型；两者同时，前者不能直接加载，需要通过后者的选项 table 来加载。三个命令同时使用时，它们的优先顺序为：单元格、行、列。
+\begin{table}[htbp]
+    \centering
+    \caption{彩色表格}
+    \begin{tabular}{l>{\columncolor{Yellow}}ll}
+        \rowcolor{Red}操作系统 & 发行版 & 编辑器 \\
+        Windows & MikTeX & TexMakerX \\
+        \rowcolor{Green}Unix/Linux & \cellcolor{Lavender}teTeX
+        & Kile \\
+        Mac OS & MacTeX & TeXShop \\
+        \rowcolor{Blue}通用 & TeX Live & TeXworks \\
+    \end{tabular}
+\end{table}
+
+%奇偶行颜色,xcolor 宏包的 rowcolors 命令 (需要 colortbl 宏包的支持) 可以分别设置奇偶行的颜色，甚合吾意。该命令语法如下：语法：{起始行}{奇数行颜色}{偶数行颜色}
+\begin{table}[htbp]
+    \centering
+    \caption{奇偶行彩色表格}
+    \rowcolors{1}{White}{Lavender}
+    \begin{tabular}{lll}
+        \hline
+        操作系统 & 发行版 & 编辑器 \\
+        Windows & MikTeX & TexMakerX \\
+        Unix/Linux & teTeX & Kile \\
+        Mac OS & MacTeX & TeXShop \\
+        通用 & TeX Live & TeXworks \\
+        \hline
+        \hiderowcolors  %暂停显示前面设置的奇偶行颜色，否则后面的其他表格会继续显示颜色,\showrowcolors 可以用来重新激活奇偶行颜色设置。
+    \end{tabular}
+\end{table}

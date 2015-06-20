@@ -1,0 +1,51 @@
+\documentclass[12pt]{article}
+\usepackage[CJKchecksingle,CJKnumber]{xeCJK}
+\setCJKmainfont[BoldFont={Adobe Heiti Std},ItalicFont={Adobe Kaiti Std}]{Adobe Song Std}
+\setCJKsansfont{Adobe Heiti Std}
+\setCJKmonofont{Adobe Fangsong Std}
+\punctstyle{hangmobanjiao}
+
+\usepackage{graphicx}  %使用图形包
+\usepackage{subfig} %并排放,各有标题, 需要使用minipage
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{rotating}
+\usepackage{tabularx}
+\usepackage[table,dvipsnames]{xcolor}
+
+\usepackage{syntonly}
+\usepackage{caption}
+\title{傻叉}
+%单位直接写在作者下面
+\author{地下精神$^*$\quad 李松如$^\dagger$\quad 松松$^\ddagger$\\[10pt]
+$*$华侨大学,厦门,VT\\
+$\dagger$厦门大学,厦门,CA\\
+$\ddagger$福州大学,福州,CA}
+\date{}
+\begin{document}
+    %标题
+    %文档类选项 notitlepage 和 titlepage 可以用来控制标题是否单独占一页。 report 和 book 文档类中的标题缺省独占一页，article 文档类中的标题缺省和正文等混居一页。
+    \maketitle
+    
+    %目录
+    %\tableofcontents 命令可以用来生成整个文档的章节目录。 L ATEX 会自动设定目录包含的章节层次，我们也可以用 \setcounter 命令来指定目录的层次深度。如果不想让某个章节标题出现在目录里，则可以使用 例 10.3中带 * 的命令来声明章节。
+    \tableofcontents
+    \listoffigures
+    \listoftables
+    
+    %目录的浮动环境,使用caption宏包,不会用
+%    \DeclareCaptionType[fileext=lof]{example}[例][例目录]
+%    \begin{example}[h]
+%
+%    \end{example}
+
+    
+    \section{section 1}
+        \input{10_chapter1} %不会新起一页
+        \subsection*{subSec 1}  %设置*号则不会加入目录
+        \include{10_chapter2}   %新起一页
+        \include{10_chapter3}
+        %当文档很长时，编译一遍也会很花时间。我们可以使用 syntonly 宏包，这样编译时就只检查语法，而不生成结果文件。
+        %\syntaxonly不会用...
+
+\end{document}

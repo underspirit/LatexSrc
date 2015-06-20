@@ -29,7 +29,7 @@
     \graphicspath{{c:/secret -garden/}}
     \graphicspath{{./}}
     \graphicspath{{one-little/}{two-little/}{three-little-indians/}}
-    
+
     %figure环境
     %htbp这几个字母分别代表 here, top, bottom, ìoat page，也就是就这里、页顶、页尾、浮动页 (专门放浮动环境的单独页面) 。这几个字母的任意组合，四个母都写上表示放哪里都无所谓；一般不推荐单独使用 h，
     \begin{figure}[htbp]
@@ -38,7 +38,7 @@
         \caption{Obama SB}  %图的题注,会自动加上编号
         \label{fig:myphoto} % \label 应该放在标题之后，否则引用时指向的是前一个结构对象
     \end{figure}
-    
+
     %插入多个图
     %并排放,共享标题
     \begin{figure}[htbp]
@@ -48,11 +48,11 @@
         \includegraphics{obama.jpg}
         \caption{obama is sb}
     \end{figure}
-    
-    %并排放,各有标题, 需要使用
+
+    %并排放,各有标题, 需要使用minipage
     \begin{figure}[htbp]
         \centering
-        \fbox{% 
+        \fbox{%
         \begin{minipage}{149pt}  %括号中指定宽度...使用fbox显示一个边框..
             \centering
             \includegraphics{obama.jpg}
@@ -66,7 +66,7 @@
             \caption{sb2}
         \end{minipage}
     \end{figure}
-    
+
     %并排摆放，共享标题，各有子标题,使用subfig宏包的subfloat
     \begin{figure}[htbp]
         \centering
@@ -82,7 +82,7 @@
         \caption{sb xxoo}
         \label{fig:subfig}
     \end{figure}
-    
+
     %改进子图方法
     %\subfloat 命令缺少宽度参数，而子标题最多只能和子图一样宽，太长的话会出现折行。为了避免子标题折行，我们可以在 \subfloat 里再嵌套个 minipage，因为后者是有宽度的
     \begin{figure}[htbp]
@@ -104,7 +104,7 @@
         }
         \caption{sb xxoo}
         \label{fig:subfig}
-    \end{figure}    
-    
-    
+    \end{figure}
+
+
 \end{document}

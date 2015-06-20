@@ -1,0 +1,70 @@
+\documentclass[12pt]{article}
+\usepackage[CJKchecksingle,CJKnumber]{xeCJK}
+\setCJKmainfont[BoldFont={Adobe Heiti Std},ItalicFont={Adobe Kaiti Std}]{Adobe Song Std}
+\setCJKsansfont{Adobe Heiti Std}
+\setCJKmonofont{Adobe Fangsong Std}
+\punctstyle{hangmobanjiao}
+
+%生成书签方式一,colorlinks去掉红框
+\usepackage[bookmarksnumbered, bookmarksopen, colorlinks, citecolor=blue, linkcolor=blue]{hyperref}
+%好像这样就行,目录有红框
+%\usepackage{hyperref}
+
+%方式二,传说中推荐的
+%\documentclass[hyperref, UTF8]{ctexart}
+%\begin{document}
+%\section{中文书签不会乱码}
+%UTF-8 编码，Xe\LaTeX{}/pdf\LaTeX{}/\LaTeX{} - DVIPDFMx 编译。
+%\end{document}
+
+%方式三
+%\documentclass{article}
+%\usepackage[hyperref, UTF8]{ctex}
+%\begin{document}
+%\section{中文书签不会乱码}
+%UTF-8 编码，Xe\LaTeX{}/pdf\LaTeX{}/\LaTeX{} - DVIPDFMx 编译。
+%\end{document}
+
+%如果我们想改变这些变量的值，比如中文文档需要中文结构名，可以用
+%例 10.12 中的方法来重定义这些结构名变量。例中第四、五行代码是为了顺
+%应中文的习惯。
+\renewcommand{\contentsname}{目录}
+\renewcommand{\listfigurename}{图目录}
+\renewcommand{\listtablename}{表目录}
+\renewcommand{\partname}{第 \thepart 部}
+%\renewcommand{\chaptername}{第 \thechapter 章}
+\renewcommand{\figurename}{图}
+\renewcommand{\tablename}{表}
+%\renewcommand{\bibname}{参考文献}   %book专有
+\renewcommand{\appendixname}{附录}
+\renewcommand{\indexname}{索引}
+\renewcommand{\abstractname}{摘要}    %report和article专有
+\renewcommand{\refname}{参考文献}   %report和article专有
+
+% \ref 命令显示的是数字。 hyperref 宏包提供了一个
+%\autoref 命令，它可以自动判断标签所属结构对象的类型，为引用加上合
+%适的名字，输出时显示结构名加上结构编号。该宏包也为此定义了一些结构
+%变量名，我们也可以用同样的方法重定义它们
+\renewcommand{\equationautorefname}{公式}
+\renewcommand{\footnoteautorefname}{脚注}
+\renewcommand{\itemautorefname}{项}
+\renewcommand{\figureautorefname}{图}
+\renewcommand{\tableautorefname}{表}
+\renewcommand{\appendixautorefname}{附录}
+\renewcommand{\theoremautorefname}{定理}
+%需要注意的是， \autoref 命令输出的结果总是名称在编号前面，对于
+%章、节等结构无法产生“第 x 章”、“第 x 节”等符合中文习惯的结果。所
+%以 例 10.13 略去了若干这样的结构名，我们在引用时需要手工在 \ref 命令
+%前后加上合适的字眼。
+\begin{document} 
+    \tableofcontents
+    \listoftables
+    \listoffigures
+
+    \section{中文书签不会乱码}
+    UTF-8 编码，Xe\LaTeX{}/pdf\LaTeX{}/\LaTeX{} - DVIPDFMx 编译。
+
+
+    
+
+\end{document}
