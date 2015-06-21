@@ -1,0 +1,42 @@
+\documentclass[12pt]{article}
+\usepackage[CJKchecksingle,CJKnumber]{xeCJK}
+\setCJKmainfont[BoldFont={Adobe Heiti Std},ItalicFont={Adobe Kaiti Std}]{Adobe Song Std}
+\setCJKsansfont{Adobe Heiti Std}
+\setCJKmonofont{Adobe Fangsong Std}
+\punctstyle{hangmobanjiao}
+
+\usepackage{multicol}
+\begin{document}
+%简单的两栏设置
+%\documentclass[twocolumn]{article}
+
+%multicol 宏包提供了更多的功能，比如它支持多达十个栏
+%位，栏位数目可以任意切换；各栏长度相同，最后一页看起来会左右平衡
+%一些。
+\setlength{\columnsep}{12pt}    %将栏位之间的距离设为 12pt（缺省是 10pt）
+\setlength{\columnseprule}{1pt} %将栏位之间的分割线宽度设为 1pt（缺省 0pt，也就是不显示）
+\begin{multicols}{4}
+在浏览网页过程中，所有的“大”“小”概念，都是基于“屏幕”这个“界面”上。“屏幕”上的各种信息，包括文字、图片、表格等等，都会随屏幕的分辨率变化而变化，一个100px宽度大小的图片，在800×600分辨率下，要占屏幕宽度的1/8，但在1024×768下，则只占约1/10。所以如果在定义字体大小时，使用px作为单位，那一旦用户改变显示器分辨率从800到1024，用户实际看到的文字就要变“小”（自然长度单位），甚至会看不清，影响浏览。\\
+那是不是用pt做单位就没这样的问题呢？错！问题同样出现。刚才的例子已经很清楚的说明，在不同分辨率下，无论是px还是pt，都会改变大小。以现在的电脑屏幕情况，还没有一种单位可以保证，在不同分辨率下，一个文字大小可以“固定不变”。因为这很难以实现也不是很有必要：全球电脑用户以亿来数，屏幕从14寸到40寸甚至更高都有，屏幕大小不同，分辨率也不同，要保证一个字体在所有用户面前大小一样，实在是MISSION IMPOSSIBLE。另外，电脑有其自身的调节性。
+
+那在页面设计中到底是用px还是pt呢？
+
+我认为，这个并没有什么原则性差异，就看自己处于什么角度思考了。
+\end{multicols}
+
+%分页
+%TEX 通常都会自动分页，无须人工干涉。但是浮动体较多的情况下，分
+%页就变成一个 NP 完全问题 5，自动分页的效果可能不是我们想要的。这时
+%就需要手工插入分页命令，
+\newpage
+%如果我们也不确定某处分页是否妥当，可以使用另一个命令，给 TEX 留
+%点面子。这个参数取值 1–4， 4 表示强烈要求分页， 1 表示你看着办吧。
+\pagebreak[3]
+%类似地，我们还可以建议 TEX 不要分页，其参数取值也是 1–4， 4 表示
+%强烈反对分页， 1 表示随便。
+\nopagebreak[2]
+%浮动体较多， TEX 无所适从时，我们可以用下面的命令帮它减轻点责
+%任。此命令要求 TEX 排完此前所有浮动体，不管是否难看，咱就这么办了。
+\clearpage
+
+\end{document}
